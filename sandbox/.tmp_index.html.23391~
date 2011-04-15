@@ -1,0 +1,27 @@
+<html>
+	<head>
+		<title>sandbox</title>
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.js"/></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$("#pull")
+			}
+		</script>
+		<link type="text/css" rel="stylesheet" href="css/reset.css"/>
+		<link type="text/css" rel="stylesheet" href="css/960.css"/>
+		<link type="text/css" rel="stylesheet" href="css/text.css"/>
+		<link type="text/css" rel="stylesheet" href="css/style.css"/>
+	</head>
+	<body>
+		<div class="container_12">
+			<div class="grid_12"><p>Testing</p></div>
+			<div class="clear"></div>
+			<div class="grid_8 suffix_2 prefix_2">
+				<div id="pull"><p>
+					replace me
+				</p></div>
+			</div>
+		</div>
+	</body>
+</html>
+

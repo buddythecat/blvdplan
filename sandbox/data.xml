@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+	<item name="test title">
+		<title>A Title</title>
+		<content>
+			testing content embedded into an XML structure
+		</content>
+	</item>
+</root>
