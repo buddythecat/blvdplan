@@ -1,0 +1,50 @@
+/* Body */
+html, body{
+	height:100%;
+}
+.container_12{
+	height:100%;
+}
+/* Classes for no-margin versions of columns */
+.grid_3_NM{
+	width: 230px;
+}
+
+.grid_9_NM{
+	width: 710px;
+}
+
+.grid_9_NM,
+.grid_3_NM {
+  	display: inline;
+	float: left;
+	margin-left:0px;
+	margin-right:0px;
+}
+/* Classes to do conceptual layout */
+#container{
+	height:100%;
+	background-color:#FEF1EC;
+}
+#header{
+	background-color:#FFFF99;
+	height:24px;
+}
+
+#navigation{
+	background-color:#E6E6E6;
+	height:128px;
+}
+
+#content_container{
+	
+}
+
+#content_container #side_bar{
+	background-color:#BCD5E6;;
+	height:128px;
+}
+
+#content_container #content{
+	
+}

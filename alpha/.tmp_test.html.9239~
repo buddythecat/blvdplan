@@ -1,0 +1,15 @@
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr">
+	<head>
+		<title>Boulevard Planning - Alpha1</title>
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.js"/></script>
+		<link type="text/css" rel="stylesheet" href="css/reset.css"/>
+		<link type="text/css" rel="stylesheet" href="css/960.css"/>
+		<link type="text/css" rel="stylesheet" href="css/text.css"/>
+		<link type="text/css" rel="stylesheet" href="css/style.css"/>
+	</head>
+	<body>
+		<div id="container" class="container_24">
+			<div id="header" class=""
+		</div>
+	</body>
+</html>
