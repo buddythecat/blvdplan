@@ -33,7 +33,7 @@ html, body{
 
 #navigation{
 	background-color:#E6E6E6;
-	height:128px;
+	height:192px;
 }
 
 #content_container{
@@ -47,4 +47,19 @@ html, body{
 
 #content_container #content{
 	
+}
+/* navigation
+ * <p>navigation//width:940px / height:128px margin-left:10px / margin-right:10px</p>
+ */
+.nav_closed{
+	width:92;
+}
+.nav_open{
+	width:468;
+}
+#navigation div{
+	display:inline;
+	float:left;
+	height:190px;
+	border:1px solid #000000;
 }
