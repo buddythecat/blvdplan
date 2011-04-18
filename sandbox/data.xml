@@ -6,4 +6,10 @@
 			testing content embedded into an XML structure
 		</content>
 	</item>
+	<item name="Another Title">
+		<title>Poop</title>
+		<content>
+			ipsum lorem ipsul
+		</content>
+	</item>
 </root>
