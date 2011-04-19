@@ -1,0 +1,9 @@
+function sideNav(start){
+	this.values = start || {};
+}
+sideNav.prototype.add = function(index, name, url, desc){
+	this.values[index] = [name, url, desc];
+}
+sideNav.protoType.each = function(action){
+	forEachIn(this.values, action);
+}

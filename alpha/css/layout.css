@@ -63,3 +63,13 @@ html, body{
 	height:190px;
 	border:1px solid #000000;
 }
+
+.sideStyle{
+	color:#FF5E99;
+	text-decoration:none;
+	background-color:#FFFFFF;
+}
+.sideStyle a{
+	text-decoration:none;
+	color:#000000;
+}

@@ -3,7 +3,50 @@
 		<title>Boulevard Planning - Alpha1</title>
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.js"/></script>
 		<script type="text/javascript">
-			
+			$(document).ready(function(){
+				contact;
+				sections = [];
+				$.ajax({
+					type:'GET',
+					url:('data/main.xml'),
+					datatype:'xml',
+					success:function(xml){
+							contact = {
+							name: $($(xml).find('contact').children().get(0)).text(),
+							address: $($(xml).find('contact').children().get(1)).text(),
+							telNo: $($(xml).find('contact').children().get(2)).text(),
+							faxNo: $($(xml).find('contact').children().get(3)).text(),
+							email: $($(xml).find('contact').children().get(4)).text(),
+						};
+						$(xml).find('sections').children().each(function(){
+							sections.push({
+								name: $(this).attr('name'),
+								url: $(this).attr('url'),
+								desc: $(this).attr('desc')
+							});
+						});
+					}
+				});
+				
+				$('<span>'+(contact.address)+'asdf</span>').appendTo($('body'));
+			});
+				/*
+					$.ajax({
+						type:'GET',
+						url:'data/data.xml',
+						datatype:'xml',
+						success:function(xml){
+							var $list = $('<ul id="navList" />');
+							$list.addClass($(xml).find('navigation').attr('useStyle'));
+							$(xml).find('item').each(function(){
+								$thisItem = $('<li id="'+$(this).attr('index')+'" />');
+								$thisItem.append("<a id=\""+$(this).attr('name')+"\" href=\""+$(this).attr('href')+"\">"+$(this).find('value').text()+"</a>");
+								$thisItem.appendTo($list);
+							});
+							$list.appendTo("#side_bar");
+						}
+					});
+				
 			//slide the navbar to the clicked segment
 			
 			$(document).ready(function(){
@@ -29,8 +72,14 @@
 						}
 					);
 				});
+				$("#navList li").mouseover(function(){
+					$(this).css('font-size', '14pt');
+				});
+				$("#navList li").mouseout(function(){
+					$(this).css('font-size', '10pt');
+				});
 			});
-			
+			*/
 		</script>
 		<link type="text/css" rel="stylesheet" href="css/reset.css"/>
 		<link type="text/css" rel="stylesheet" href="css/960.css"/>

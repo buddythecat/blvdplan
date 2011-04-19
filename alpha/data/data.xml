@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<root>
+	<navigation useStyle="sideStyle">
+		<item index="0" name="?" href="/">
+			<value>poop</value>
+		</item>
+		<item index="1" name="?" href="/">
+			<value>more Poop</value>
+		</item>
+		<item index="2" name="?" href="/">
+			<value>this is not poop</value>
+		</item>
+		<item index="3" name="?" href="/">
+			<value>im not sure what this is</value>
+		</item>
+	</navigation>
+</root>

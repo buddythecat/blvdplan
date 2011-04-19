@@ -1,0 +1,12 @@
+<data>
+	<contact>
+		<corpName>Boulevard Planning</corpName>
+		<address>Address</address>
+		<telNo>Telephone</telNo>
+		<faxNo></faxNo>
+		<email>Email</email>
+	</contact>
+	<sections>
+		<section name="section name" url=" " desc="description" />
+	</sections>
+</data>

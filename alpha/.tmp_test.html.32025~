@@ -1,0 +1,66 @@
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr">
+	<head>
+		<title>Boulevard Planning - Alpha1</title>
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.js"/></script>
+		<script type="text/javascript">
+			
+			//slide the navbar to the clicked segment
+			
+			$(document).ready(function(){
+				var activeSec = $('#home').attr('id');
+				$(".nav_closed").click(function(){
+					$("#"+activeSec).animate(
+						{width: 92},
+						500, 
+						'linear',
+						function(){
+							$("#"+activeSec).removeClass('nav_open');
+							$("#"+activeSec).addClass('nav_closed');
+						}
+					);
+					$(this).animate(
+						{width:468},
+						500,
+						'linear',
+						function(){
+							$(this).removeClass("nav_closed");
+							$(this).addClass("nav_open");
+							activeSec = $(this).attr('id');
+						}
+					);
+				});
+			});
+			
+		</script>
+		<link type="text/css" rel="stylesheet" href="css/reset.css"/>
+		<link type="text/css" rel="stylesheet" href="css/960.css"/>
+		<link type="text/css" rel="stylesheet" href="css/text.css"/>
+		<link type="text/css" rel="stylesheet" href="css/style.css"/>
+		<link type="text/css" rel="stylesheet" href="css/layout.css"/>
+	</head>
+	<body>
+		<div class="container_12">
+			<div id="container">
+				<div id="header" class="grid_12">
+					<p>BLVD PLANNING - LAYOUT - ALPHA1 // width:940 / height:24px</p>
+				</div>
+				<div class="clear"></div>
+				<div id="navigation" class="grid_12">
+					<div id="home" class="nav_open"><p>nav1</p></div>
+					<div id="construction" class="nav_closed"><p>nav2</p></div>
+					<div id="architecture" class="nav_closed"><p>nav3</p></div>
+					<div id="realEstate" class="nav_closed"><p>nav4</p></div>
+					<div id="surveying" class="nav_closed"><p>nav5</p></div>
+					<div id="contact" class="nav_closed"><p>nav6</p></div>
+				</div>
+				<div class="clear"></div>
+				<div id="content_container" class="grid_12">
+					<div id="side_bar" class="grid_3 alpha"><p>side bar//width:230px / height:128px</p></div>
+					<div id="content" class="grid_9 omega"><p>contents//width:710px / height:defined by content</p></div>
+					<div class="clear"></div>
+				</div>
+				<div class="clear"></div>
+			</div>
+		</div>
+	</body>
+</html>
