@@ -1,0 +1,91 @@
+/*
+ * Text-styles for boulevard planning
+ */
+/* General Font Styles: 
+* *********************************************/
+body{
+	font-size:12px;
+	font-family:Tahoma;
+}
+/* Header */
+#header p{
+	display:inline;
+	vertical-align:baseline;
+}
+#header{
+	padding-top:5px;
+}
+/* Navigation */
+
+/* Content */
+#content{
+	padding-top:20px;
+}
+/* Side Bar */
+#side_bar{
+	font-family:Tahoma;
+	font-weight:bold;
+}
+#side_bar ul{
+	list-style:none;
+	margin:0 0 15px 0;
+	padding:0px 0px 0px 0px;
+	display:none;
+}
+/* headings 
+ * *********************************************/
+h1 {
+  font-size: 25px;
+}
+
+h2 {
+  font-size: 23px;
+}
+
+h3 {
+  font-size: 21px;
+}
+
+h4 {
+  font-size: 19px;
+}
+
+h5 {
+  font-size: 17px;
+}
+
+h6 {
+  font-size: 15px;
+}
+/* Spacing */
+
+ol {
+  list-style: decimal;
+}
+
+ul {
+  list-style: disc;
+}
+
+li {
+  margin-left: 0px;
+}
+
+p,
+dl,
+hr,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ol,
+ul,
+pre,
+table,
+address,
+fieldset,
+figure {
+  margin-bottom: 5px;
+}

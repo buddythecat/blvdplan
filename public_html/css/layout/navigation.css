@@ -1,0 +1,38 @@
+#navigation div{
+	width:98px;
+	height:192px;
+	display:inline-block;
+	border:0;
+	float:left;
+	background-position:left center;
+	background-repeat:no-repeat;
+	cursor:pointer;
+}
+#navigation #nav1{
+	width:468px;
+	background-image:url('http://blvdplan.com/0300%20-%20Projects/0316%20-%20Kanner%20Residence/0316%20-%20Lifted%201.JPG');
+}
+#navigation #nav2{
+	background-image:url('http://blvdplan.com/0300%20-%20Projects/0316%20-%20Kanner%20Residence/0316%20-%20Backfill%201.JPG');
+}
+#navigation #nav3{
+	background-image:url('http://blvdplan.com/0900%20-%20Projects/0915%20-%20Pezzino%20Residence%20-%20New%20Suffolk/0915%20-%20_1.JPG');
+}
+#navigation #nav4{
+	background-image:url('http://blvdplan.com/0300%20-%20Projects/0316%20-%20Kanner%20Residence/0316%20-Landscape%202.JPG');
+}
+#navigation #nav5{
+	background-image:url('http://blvdplan.com/0900%20-%20Projects/0915%20-%20Pezzino%20Residence%20-%20New%20Suffolk/0915%20-%20_4.JPG');
+}
+#navigation #nav6{
+
+}
+#navigation{
+	background-image:url('http://blvdplan.com/0300%20-%20Projects/0316%20-%20Kanner%20Residence/0316%20-%20Lifted%201.JPG');
+	background-position:center right;
+	background-repeat:no-repeat;
+}
+#navigation .navBar{
+	width:100%;
+	background-color:#F6921E;
+}
