@@ -1,77 +1,201 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset='utf-8'>
-
-  <title>buddythecat/blvdplan @ GitHub</title>
-
-  <style type="text/css">
-    body {
-      margin-top: 1.0em;
-      background-color: #e6e6e6;
-      font-family: Helvetica, Arial, FreeSans, san-serif;
-      color: #000000;
-    }
-    #container {
-      margin: 0 auto;
-      width: 700px;
-    }
-    h1 { font-size: 3.8em; color: #191919; margin-bottom: 3px; }
-    h1 .small { font-size: 0.4em; }
-    h1 a { text-decoration: none }
-    h2 { font-size: 1.5em; color: #191919; }
-    h3 { text-align: center; color: #191919; }
-    a { color: #191919; }
-    .description { font-size: 1.2em; margin-bottom: 30px; margin-top: 30px; font-style: italic;}
-    .download { float: right; }
-    pre { background: #000; color: #fff; padding: 15px;}
-    hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
-    .footer { text-align:center; padding-top:30px; font-style: italic; }
-  </style>
-</head>
-
-<body>
-  <a href="http://github.com/buddythecat/blvdplan"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" /></a>
-
-  <div id="container">
-
-    <div class="download">
-      <a href="http://github.com/buddythecat/blvdplan/zipball/master">
-        <img border="0" width="90" src="http://github.com/images/modules/download/zip.png"></a>
-      <a href="http://github.com/buddythecat/blvdplan/tarball/master">
-        <img border="0" width="90" src="http://github.com/images/modules/download/tar.png"></a>
-    </div>
-
-    <h1><a href="http://github.com/buddythecat/blvdplan">blvdplan</a>
-      <span class="small">by <a href="http://github.com/buddythecat">buddythecat</a></span></h1>
-
-    <div class="description">
-      sandbox for blvdpln
-    </div>
-
-    <h2>Authors</h2>
-<p>Dances With Caterpillars (buddythecat@gmail.com)<br/><br/>      </p>
-<h2>Contact</h2>
-<p>Dances With Caterpillars (buddythecat@gmail.com)<br/>      </p>
-
-
-    <h2>Download</h2>
-    <p>
-      You can download this project in either
-      <a href="http://github.com/buddythecat/blvdplan/zipball/master">zip</a> or
-      <a href="http://github.com/buddythecat/blvdplan/tarball/master">tar</a> formats.
-    </p>
-    <p>You can also clone the project with <a href="http://git-scm.com">Git</a>
-      by running:
-      <pre>$ git clone git://github.com/buddythecat/blvdplan</pre>
-    </p>
-
-    <div class="footer">
-      get the source code on GitHub : <a href="http://github.com/buddythecat/blvdplan">buddythecat/blvdplan</a>
-    </div>
-
-  </div>
-
-  
-</body>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr">
+	<head>
+		<title>Boulevard Planning - Alpha1</title>
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.js"/></script>
+		<script type="text/javascript">
+			$(document).ready(function (){
+				lastBlock = $("#nav1");
+				nextBlock = null;
+				maxWidth=468;
+				minWidth=98;
+				$("#L"+$(lastBlock).attr('id')).show(100);
+				$($(lastBlock).children('.navBar')[0]).css('background-color', 'FBCB09');
+				$($(lastBlock).children('.navBar')[0]).animate({height: '+=15px'}, {queue:false, duration:400});
+				$("#navigation div").click(
+				function(){
+					if ($(this).attr('id') != $(lastBlock).attr('id')) {
+						nextBlock = this;
+						$("#L" + $(lastBlock).attr('id')).hide('100', function(){
+							//$("#L"+$(nextBlock).attr('id')).show('400');
+							return false;
+						});
+						$("#C" + $(lastBlock).attr('id')).fadeOut('300', function(){
+							$("#C" + $(nextBlock).attr('id')).fadeIn('400', function(){
+								$("#L" + $(nextBlock).attr('id')).height($("#content").height());
+								$("#L" + $(nextBlock).attr('id')).show('400', 'linear');
+								return false;
+							});
+							return false;
+						});
+						$($(nextBlock).children('.navBar')[0]).css('background-color', '#FBCB09');
+						$($(nextBlock).children('.navBar')[0]).animate({height: '+=15px'}, {queue:false, duration:400});
+						$($(lastBlock).children('.navBar')[0]).css('background-color', '#F6921E');
+						$($(lastBlock).children('.navBar')[0]).animate({height: '-=15px'}, {queue:false, duration:400});
+						$(lastBlock).animate({
+							width: minWidth + "px"
+						}, {
+							queue: false,
+							duration: 400,
+							complete: function(){
+								$(nextBlock).animate({
+									width: maxWidth + "px"
+								}, {
+									queue: false,
+									duration: 400
+								});
+							}
+						});
+						//for simultaneous sliding - uncomment line below
+						//$(this).animate({width:maxWidth},{queue:false, duration:400});
+						lastBlock = this;
+					}
+				});
+				$("#navigation div").hover(
+					function(){
+						$("#"+$(this).attr('id')+" .navBar").fadeTo('100', .4);
+					},
+					function(){
+						$("#"+$(this).attr('id')+" .navBar").fadeTo('100', 1);
+					}
+				);
+			});
+		</script>
+		<link type="text/css" rel="stylesheet" href="css/layout/reset.css"/>
+		<link type="text/css" rel="stylesheet" href="css/layout/960.css"/>
+		<link type="text/css" rel="stylesheet" href="css/layout/layout.css"/>
+		<link type="text/css" rel="stylesheet" href="css/layout/content.css"/>
+		<link type="text/css" rel="stylesheet" href="css/layout/navigation.css"/>
+		<link type="text/css" rel="stylesheet" href="css/text/text.css"/>
+	</head>
+	<body>
+		<div class="container_12">
+			<div id="container">
+				<div id="header" class="grid_12">
+					<p id="header">Boulevard Planning - xxx Franklin Ave, Garden City, New York, 11530 - xxx-xxx-xxxx - email@blvdplan.com</p>
+				</div>
+				<div class="clear"></div>
+				<div id="navigation" class="grid_12">
+					<div id="nav1"><p class="navBar">1</p></div>
+					<div id="nav2"><p class="navBar">2</p></div>
+					<div id="nav3"><p class="navBar">3</p></div>
+					<div id="nav4"><p class="navBar">4</p></div>
+					<div id="nav5"><p class="navBar">5</p></div>
+					<div id="nav6"><p class="navBar">6</p></div>
+				</div>
+				<div class="clear"></div>
+				<div id="content_container" class="grid_12">
+					<div id="side_bar" class="grid_3 alpha">
+						<ul id="Lnav1">
+							<li>side bar</li>
+							<li>width:230px</li>
+							<li>height:128px</li>
+						</ul>
+						<ul id="Lnav2">
+							<li>nav2</li>
+							<li>When each navigation section is clicked, this loads the new sidebar.</li>
+						</ul>
+						<ul id="Lnav3">
+							<li>nav3</li>
+							<li>It can contain links, and other fun stuff</li>
+						</ul>
+						<ul id="Lnav4">
+							<li>nav4</li>
+							<li>Maybe even pictures? I don't mind. <3</li>
+						</ul>
+						<ul id="Lnav5">
+							<li>nav5</li>
+							<li>Using a nifty background image might work well...</li>
+						</ul>
+						<ul id="Lnav6">
+							<li>nav6</li>
+							<li>It can also contain links and the like.</li>
+						</ul>
+					</div>
+					<div id="content" class="grid_9 omega">
+						<div class="contentContainer">
+							<p><h1>Boulevard Planning</h1></p>
+							<div id="Cnav1" class="contentPage">
+								<div class="contentSection">
+									<div class="cntHeadlines">
+										<span><h3 class="cntHead">Content Containers</h3></span>
+										<span><h6 class="cntSubhead">Each one of these sections will hold content, and load based on navigation.</h6></span>
+									</div>
+									<div class="cntBody">
+										<p>For each content section, the body of text would then get put in here.<br/>It can store a bunch of stuff. </p>
+										<p>It can also be broken up into paragraphs.</p>
+									</div>
+								</div>
+							</div>
+							<div id="Cnav2" class="contentPage">
+								<div class="contentSection">
+									<div class="cntHeadlines">
+										<span><h3 class="cntHead">Content Container for Nav2</h3></span>
+										<span><h6 class="cntSubhead"></h6></span>
+									</div>
+									<div class="cntBody">
+										<p>Containers can be defined without subheaders...</p>
+									</div>
+								</div>
+							</div>
+							<div id="Cnav3" class="contentPage">
+								<div class="contentSection">
+									<div class="cntHeadlines">
+										<span><h3 class="cntHead">Content Container for Nav3</h3></span>
+										<span><h6 class="cntSubhead"></h6></span>
+									</div>
+									<div class="cntBody">
+										<p>Containers can be defined without subheaders...</p>
+									</div>
+								</div>
+							</div>
+							<div id="Cnav4" class="contentPage">
+								<div class="contentSection">
+									<div class="cntHeadlines">
+										<span><h3 class="cntHead">Content Container for Nav4</h3></span>
+										<span><h6 class="cntSubhead"></h6></span>
+									</div>
+									<div class="cntBody">
+										<p>Containers can be defined without subheaders...</p>
+									</div>
+								</div>
+							</div>
+							<div id="Cnav5" class="contentPage">
+								<div class="contentSection">
+									<div class="cntHeadlines">
+										<span><h3 class="cntHead">Content Container for Nav5</h3></span>
+										<span><h6 class="cntSubhead"></h6></span>
+									</div>
+									<div class="cntBody">
+										<p>Containers can be defined without subheaders...</p>
+									</div>
+								</div>
+							</div>
+							<div id="Cnav6" class="contentPage">
+								<div class="contentSection">
+									<div class="cntHeadlines">
+										<span><h3 class="cntHead">Content Container for Nav6</h3></span>
+										<span><h6 class="cntSubhead">Demonstration of Paragraph style text using Lorem</h6></span>
+									</div>
+									<div class="cntBody">
+										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam in venenatis nisl. Curabitur id felis eu elit lacinia fermentum. Donec sit amet dolor nulla, et lacinia turpis. Vestibulum eleifend tempus nulla, vitae auctor eros vehicula ac. Suspendisse vulputate sem sapien. Maecenas commodo vehicula purus ut congue. Mauris gravida, felis a blandit scelerisque, mi tellus pretium libero, dapibus blandit dolor augue in felis. Nam semper, tellus et sagittis feugiat, magna nibh euismod dui, quis imperdiet massa metus sit amet augue. In hac habitasse platea dictumst. Morbi fermentum sapien eget metus mattis vitae tristique sem dictum. Suspendisse quis nisl mauris. Aenean ut arcu ante. Curabitur convallis lacinia erat a faucibus. Quisque eu enim ultrices dolor gravida facilisis. Vivamus consequat justo vitae augue suscipit commodo porta nunc pharetra. Nulla quis metus erat, sed rhoncus dui. </p>
+									</div>
+								</div>
+								<div class="contentSection">
+									<div class="cntHeadlines">
+										<span><h3 class="cntHead">Also showing multiple content containers</h3></span>
+										<span><h6 class="cntSubhead"></h6></span>
+									</div>
+									<div class="cntBody">
+										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam in venenatis nisl. Curabitur id felis eu elit lacinia fermentum. Donec sit amet dolor nulla, et lacinia turpis. Vestibulum eleifend tempus nulla, vitae auctor eros vehicula ac. Suspendisse vulputate sem sapien. Maecenas commodo vehicula purus ut congue. Mauris gravida, felis a blandit scelerisque, mi tellus pretium libero, dapibus blandit dolor augue in felis. Nam semper, tellus et sagittis feugiat, magna nibh euismod dui, quis imperdiet massa metus sit amet augue. In hac habitasse platea dictumst. Morbi fermentum sapien eget metus mattis vitae tristique sem dictum. Suspendisse quis nisl mauris. Aenean ut arcu ante. Curabitur convallis lacinia erat a faucibus. Quisque eu enim ultrices dolor gravida facilisis. Vivamus consequat justo vitae augue suscipit commodo porta nunc pharetra. Nulla quis metus erat, sed rhoncus dui. </p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div class="clear"></div>
+			</div>
+		</div>
+	</body>
 </html>

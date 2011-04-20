@@ -1,0 +1,66 @@
+/* Body */
+html, body{
+	height:100%;
+}
+.container_12{
+	height:100%;
+}
+/* ::ID-based classes for general layout
+ *	 
+*/
+#container{
+	min-height:100%;
+	height:auto;
+	background-color:#FEF1EC;
+	border-left:1px solid #000000;
+	border-right:1px solid #000000;
+}
+#header{
+	background-color:#FFFFFF;
+	height:19px;
+}
+
+#navigation{
+	width:958px;
+	margin-left:0;
+	margin-right:0;
+	background-color:#E6E6E6;
+	height:192px;
+}
+
+#content_container{
+	
+}
+
+#content_container #side_bar{
+	background-color:#BCD5E6;;
+	min-height:15px;
+}
+
+#content_container #content{
+	background-color:#FFFFFF;
+}
+/* Classes for navigation pane
+ * [may be replaced]
+ */
+.nav_closed{
+	width:92;
+}
+.nav_open{
+	width:488;
+}
+#home{
+	border-left:0;
+}
+#contact{
+	border-right:0;
+}
+.sideStyle{
+	color:#FF5E99;
+	text-decoration:none;
+	background-color:#FFFFFF;
+}
+.sideStyle a{
+	text-decoration:none;
+	color:#000000;
+}
